@@ -1,3 +1,93 @@
+/* import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+h1{
+  background-color: lightblue;
+  text-align: center;
+  font-family:'Permanent Marker','Times New Roman', Times, serif;
+  font-weight: bold;
+  color: darkblue;
+  padding: 20px 10px 5px 10px;
+  margin:0px;
+}
+
+#welcomeMessage{
+  text-align:center;
+  background-color: lightblue;
+  margin: 0px;
+  padding: 0px 10px 10px 10px;
+  color: darkblue;
+  font-style: italic;
+}
+
+.container{
+  display:flex;
+}
+
+#containerLeft, #containerRight{
+  flex: 1; /* width = 50% 50% */
+}
+
+#containerLeft .widget{
+  border:2px black solid;
+  border-radius: 20px;
+  margin: 10px;
+  padding:10px 20px;
+  text-align: center;
+}
+
+#containerLeftR2{
+  display:flex;
+}
+
+#containerLeftR2 > .widget{
+  width: 50%;
+}
+
+/* make the rightside same height as left */
+#containerRight{
+  display: flex;
+  flex-direction: column;
+  border:2px black solid;
+  border-radius: 20px;
+  margin: 10px;
+  padding:10px 20px;
+}
+#transactionWidget{
+  flex: 1;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
+  justify-content: center;
+  display: flex;
+  position: sticky; /* Stick to top even scroll */
+  top: 0; /* Stick to top even scroll */
+}
+
+.nav li a {
+  display: block;
+  color: darkblue;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.Income{
+  color:limegreen;
+}
+
+.Expense{
+  color: red;
+}
+
 /* :root {
   --text: #6b6375;
   --text-h: #08060d;
