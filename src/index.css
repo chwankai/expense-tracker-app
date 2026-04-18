@@ -1,92 +1,255 @@
 /* import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+  background-color: #F8F5F0;
+  color:#2E2E2E;
+}
+
+.wholeContainer{
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 6fr;
+  }
+
+.wholeContainer div.header {
+  grid-area: header;
+  text-align: center;
+}
+.wholeContainer div.menu {
+  grid-area: menu;
+}
+.wholeContainer div.content {
+  grid-area: content;
+}
+.wholeContainer div.footer {
+  grid-area: footer;
+  text-align: center;
+  font-style: italic;
+  padding:10px 0px;
+  border-top: 2px dashed darkblue;
+}
+
+.content{
+  display:grid;
+  grid-template-areas:
+    "title title search search"
+    "balance balance addButton addButton"
+    "income expense history history"
+    "graph graph history history"
+    "addNew addNew addNew addNew";
+  grid-template-columns:1fr 1fr 1fr 1fr;
+}
+
+.content div{
+  margin: 10px 10px;
+}
+
+.content div.title{
+  grid-area:title;
+  display: flex;
+  justify-content: flex-start; /* horizontal left */
+  align-items: center;       /* vertical center */
+}
+
+.content div.search{
+  grid-area: search;
+  display: flex;
+  justify-content: flex-end; /* horizontal right */
+  align-items: center;       /* vertical center */
+}
+
+.searchField{
+  width:50%;
+  border:1px solid #E5E0D8;
+  border-radius:5px;
+  padding: 0px 10px;
+  height: 25px;
+  margin:0px 10px;
+}
+
+.search button{
+  border:1px solid #E5E0D8;
+  background-color:white;
+  border-radius:5px;
+  padding: 4px 4px;
+  height: 25px;
+}
+
+.search button:hover{
+  background-color: #E5E0D8;
+}
+
+.content div.addButton{
+  grid-area:addButton;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.addButton button{
+  padding: 10px;
+  border: 0;
+  background-color: #4A90E2;
+  color:white;
+  
+}
+
+.addButton button:hover{
+  background-color: #2C5FA8;
+  color:white;
+}
+
+.content div.balance{
+  grid-area:balance;
+}
+
+.balanceAmount{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.balanceDesc{
+  color:#7A7A7A;
+}
+
+.content div.income{
+  grid-area: income;
+  background-color: #FFFFFF;
+
+}
+
+.content div.expense{
+  grid-area:expense;
+  background-color: #FFFFFF;
+
+}
+
+.trns{
+  border: 2px solid #E5E0D8;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+.trnsTitle{
+  color:#7A7A7A;
+  font-size: 12px;
+  margin-bottom:10px;
+}
+
+.trnsAmount{
+  font-size: 22px;
+}
+
+.content div.history{
+  grid-area:history;
+  border:2px solid #E5E0D8;
+  border-radius:15px;
+  padding: 5px 10px;
+  background-color: #FFFFFF;
+}
+
+.history h2{
+  margin:10px 0px
+}
+
+.history table{
+  border:2px solid #E5E0D8;
+  border-collapse: collapse;
+  width:100%;
+}
+
+.history td, th {
+  border: 1px solid #ddd;
+  padding: 4px;
+  text-align: center;
+  text-wrap: wrap;
+}
+
+tr:hover {background-color:#D6E8FF;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.content div.graph{
+  grid-area:graph;
+  border:2px solid #E5E0D8;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  padding: 10px 15px;
+}
+
+.content div.addNewTrns{
+  grid-area:addNew;
+  border:2px solid #E5E0D8;
+  padding: 10px 15px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+
 h1{
-  background-color: lightblue;
   text-align: center;
   font-family:'Permanent Marker','Times New Roman', Times, serif;
   font-weight: bold;
-  color: darkblue;
-  padding: 20px 10px 5px 10px;
+  color: #4A90E2;
+  padding: 10px 10px 5px 10px;
   margin:0px;
 }
 
 #welcomeMessage{
   text-align:center;
-  background-color: lightblue;
   margin: 0px;
   padding: 0px 10px 10px 10px;
-  color: darkblue;
+  color: #4A90E2;
   font-style: italic;
-}
-
-.container{
-  display:flex;
-}
-
-#containerLeft, #containerRight{
-  flex: 1; /* width = 50% 50% */
-}
-
-#containerLeft .widget{
-  border:2px black solid;
-  border-radius: 20px;
-  margin: 10px;
-  padding:10px 20px;
-  text-align: center;
-}
-
-#containerLeftR2{
-  display:flex;
-}
-
-#containerLeftR2 > .widget{
-  width: 50%;
-}
-
-/* make the rightside same height as left */
-#containerRight{
-  display: flex;
-  flex-direction: column;
-  border:2px black solid;
-  border-radius: 20px;
-  margin: 10px;
-  padding:10px 20px;
-}
-#transactionWidget{
-  flex: 1;
+  border-bottom: 2px dashed darkblue;
 }
 
 .nav {
   list-style-type: none;
+  border-right: 2px dashed darkblue;
   margin: 0;
   padding: 0;
-  background-color: lightblue;
   justify-content: center;
-  display: flex;
-  position: sticky; /* Stick to top even scroll */
-  top: 0; /* Stick to top even scroll */
+  width: 100%;
+  height: 100%; /* Full height */
 }
 
 .nav li a {
   display: block;
-  color: darkblue;
+  color: #4A90E2;
   padding: 14px 16px;
   text-decoration: none;
+  text-align: center;
 }
 
 .nav li a:hover {
-  background-color: darkblue;
+  background-color: #2C5FA8;
   color: white;
 }
 
-.Income{
-  color:limegreen;
+.history tr.Income td {
+  color: #4CAF50;
 }
 
-.Expense{
-  color: red;
+.history tr.Expense td {
+  color: #E74C3C;
 }
+
+
+
 
 /* :root {
   --text: #6b6375;

@@ -1,11 +1,4 @@
-function NavBar(){
-    return <ul className='nav'>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Transaction</a></li>
-      <li><a href="#">Reports</a></li>
-      <li><a href="#">Settings</a></li>
-    </ul>
-  }
+
 
 function Header({ isCK }) {
   return (
@@ -14,9 +7,9 @@ function Header({ isCK }) {
       {/* secret message for CK only */}
       {/* && -> if want true only */}
       {isCK && <p id='welcomeMessage'>Take control of your finances</p>}
-      {NavBar()}
+      {/* {NavBar()} */}
     </>
   );
 }
 
-export default Header;
+export default Header
